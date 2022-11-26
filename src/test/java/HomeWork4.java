@@ -48,25 +48,31 @@ public class HomeWork4 {
         System.out.println("===============================");
 
         List<WebElement> elementsTableContentRow3 = wd.findElements(By.cssSelector("#customers tr:nth-child(3) td"));
-        for(int i=0; i<elementsTableContentRow3.size(); i++){
+        /*for(int i=0; i<elementsTableContentRow3.size(); i++){
             WebElement elementRow3 = elementsTableContentRow3.get(i);
             System.out.println(i+1+" "+elementRow3.getText());
+        }*/
+        for (WebElement e: elementsTableContentRow3) {
+            System.out.println(e.getText());
         }
 
-        System.out.println("===============================");
-        List<WebElement> elementsTableContentLastCol = wd.findElements(By.cssSelector("#customers tr td:last-child"));
+        System.out.println("Now===============================");
+        List<WebElement> elementsTableContentLastCol = wd.findElements(By.cssSelector("#customers td:last-child"));
         WebElement elementTh = wd.findElement(By.cssSelector("#customers tr th:last-child"));
         System.out.println(elementTh.getText());
-        for(int i=0; i<elementsTableContentLastCol.size(); i++){
+        for (WebElement element: elementsTableContentLastCol) {
+            System.out.println(element.getText());
+        }
+        /*for(int i=0; i<elementsTableContentLastCol.size(); i++){
             WebElement content = elementsTableContentLastCol.get(i);
             System.out.println(content.getText());
-        }
+        }*/
 
         System.out.println("===============================");
-        List<WebElement> elementsTableContentNames = wd.findElements(By.cssSelector("#customers tr td:nth-child(2)"));
+        List<WebElement> elementsTableContentNames = wd.findElements(By.cssSelector("#customers tr"));
         for(int i=0; i<elementsTableContentNames.size(); i++) {
             WebElement elementName = elementsTableContentNames.get(i);
-            if(elementName.getText().equals("Philip Cramer")){
+            if(elementName.getText().contains("Philip Cramer")){
                 System.out.println("number of row with name Philip Cramer = "+(i+1));
                 return;
             }

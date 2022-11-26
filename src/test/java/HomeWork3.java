@@ -24,7 +24,8 @@ public class HomeWork3 {
         WebElement webElementHome = wd.findElement(By.cssSelector(".navbar-component_nav__1X_4m a:nth-child(2)"));
         WebElement webElementHome1 = wd.findElement(By.cssSelector("#root a:nth-child(2)"));
         WebElement webElementHome2 = wd.findElement(By.cssSelector("#root>.navbar-component_nav__1X_4m>a:nth-child(2)"));
-        System.out.println("it's element= "+webElementHome1.getText());
+
+        System.out.println("it's element= "+webElementHome2.getText());
         webElementHome2.click();
     }
 
